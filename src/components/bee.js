@@ -1,5 +1,5 @@
 import React, { Component }  from 'react'
-import BeePlugin from 'bee-plugin'
+import BeePlugin from '@mailupinc/bee-plugin'
 
 // Move credentials to backend for production.
 const CLIENT_ID     = "my-client-id"
