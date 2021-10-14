@@ -1,6 +1,6 @@
 module.exports = {
   mode: 'development',
-  entry: ["./src/index.js"],
+  entry: ['./src/index'],
   output: {
     path: __dirname,
     publicPath: "/",
@@ -9,16 +9,14 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.?(js|jsx)$/,
+        test: /\.tsx?$/,
+        use: 'ts-loader',
         exclude: /node_modules/,
-        use: {
-          loader: "babel-loader",
-        }
       },
     ]
   },
   resolve: {
-    extensions: ["", ".js", ".jsx"]
+    extensions: ["", ".js", ".jsx", ".ts", ".tsx"]
   },
   devServer: {
     contentBase: "./"
