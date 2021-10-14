@@ -1,5 +1,5 @@
 
-![BEEPlugin](http://beedemos.com/Content/logo.png)
+<img src="https://beefree.io/wp-content/themes/bee2017/img/logo-bee.svg" width="100" alt="BEE Plugin" />
 
 **Live Demo**: https://beefree.io/templates/
 
@@ -30,18 +30,37 @@ git clone https://github.com/BEE-Plugin/beeplugin-react-starter.git myproject
 # Change directory
 cd myproject
 
-# Open bee.js and change the placeholders with your credentials
-const CLIENT_ID     = "my-client-id"
-const CLIENT_SECRET = "my-secret-key"
-const CLIENT_UID    = "username"
+# Open config.local.ts and change  
+# the placeholders with your credentials
+CLIENT_ID:       '### my-client-id ###'
+CLIENT_SECRET:   '### my-secret-key ###'
+CLIENT_UID:      '### username ###'
+# NOTE: remember to store these credentials in your
+# back-end and not expose them publicly in your front-end
 
-# Install dependencies, then start the gulp process with the following:
+# Install dependencies, then start the project
+# with the minimal scripts provided:
 > npm install
 > npm start
 
+# or using yarn:
+> yarn
+> yarn start
+
 # Then simply run it in your browser
-http://localhost:8080/webpack-dev-server/
+http://localhost:8080/
 ```
+
+### Build
+There is a simple build script that uses Webpack default configuration for the bundle
+```bash
+# Build the project in a single artifact:
+> npm run build
+
+# or with yarn:
+> yarn build
+```
+The output is a `bundle.js` file in the root of the project.
 
 
 ### Obtaining Credentials

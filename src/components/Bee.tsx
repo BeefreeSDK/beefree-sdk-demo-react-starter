@@ -1,4 +1,4 @@
-import React, { Component }  from 'react'
+import React, { Component } from 'react'
 import {
   JsonTemplate,
   HtmlTemplate,
@@ -6,18 +6,12 @@ import {
   BeeEditor,
   $TSFixMe,
 } from '../../types'
+import { config } from '../../config/config.local'
 // @ts-ignore
 import BeePlugin from '@mailupinc/bee-plugin'
 
-// Move credentials to backend for production.
-const CLIENT_ID     = '### my-client-id ###'
-const CLIENT_SECRET = '### my-secret-key ###'
-const CLIENT_UID    = '### username ###'
-
-const BASE_TEMPLATE = 'https://rsrc.getbee.io/api/templates/m-bee'
-
 const DEFAULT_CONFIGURATION = {
-  uid: CLIENT_UID,                   // Needed for identify resources of the user.
+  uid: config.CLIENT_UID,            // Needed for identify resources of the user.
   container: 'bee-plugin-container', // Identifies the id of div element that contains BEE Plugin.
   language: 'en-US',
   autosave: true,
@@ -47,10 +41,10 @@ class Bee extends Component<Props, State> {
   componentWillMount() {
     const { baseTemplate, onSave, onSend, onStart, onSaveAsTemplate, beeConfig } = this.props
     const beeFinalConfig = {...DEFAULT_CONFIGURATION, ...beeConfig, onSave, onSaveAsTemplate, onSend, onStart}
-    return this.onFetchTemplate(baseTemplate || BASE_TEMPLATE)
+    return this.onFetchTemplate(baseTemplate || config.BASE_TEMPLATE)
       .then((template) => {
         const beeEditor: BeeEditor = new BeePlugin()
-        this.onFetchBeeToken(CLIENT_ID, CLIENT_SECRET, beeEditor)
+        this.onFetchBeeToken(config.CLIENT_ID, config.CLIENT_SECRET, beeEditor)
           .then(() => beeEditor.start(beeFinalConfig, template))
       })
       .catch((error) => {

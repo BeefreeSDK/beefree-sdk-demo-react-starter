@@ -1,7 +1,7 @@
 {
   "name": "beeplugin-react-starter",
-  "version": "1.0.1",
-  "description": "BEE Plugin starter package for Redux with React and Babel support",
+  "version": "1.0.2",
+  "description": "BEE Plugin starter package for Redux with React and Typescript support",
   "main": "index.js",
   "repository": "https://github.com/BEE-Plugin/beeplugin-react-starter.git",
   "scripts": {
@@ -14,10 +14,6 @@
   "devDependencies": {
     "@types/react-dom": "^17.0.9",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
-    "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.4",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
     "html-webpack-plugin": "^4.5.0",
     "ts-loader": "^9.2.6",
     "typescript": "^4.4.4",
@@ -27,7 +23,6 @@
   },
   "dependencies": {
     "@mailupinc/bee-plugin": "^1.3.6",
-    "babel-preset-stage-1": "^6.24.1",
     "fs": "0.0.1-security",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
