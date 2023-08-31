@@ -1,5 +1,4 @@
-
-<img src="https://beefree.io/wp-content/themes/bee2017/img/logo-bee.svg" width="100" alt="BEE Plugin" />
+![BEE Plugin](https://avatars.githubusercontent.com/u/15609939?v=4)
 
 **Live Demo**: https://beefree.io/templates/
 
@@ -25,7 +24,7 @@ The easiest way to get started is to clone this repository:
 
 ```bash
 # Get the latest snapshot 
-git clone https://github.com/BEE-Plugin/beeplugin-react-starter.git myproject
+git clone https://github.com/BeefreeSDK/beeplugin-react-starter.git myproject
 
 # Change directory
 cd myproject
@@ -47,7 +46,7 @@ CLIENT_UID:      '### username ###'
 > yarn
 > yarn start
 
-# Then simply run it in your browser
+# Then run it in your browser
 http://localhost:8080/
 ```
 
@@ -60,12 +59,12 @@ There is a simple build script that uses Webpack default configuration for the b
 # or with yarn:
 > yarn build
 ```
-The output is a `bundle.js` file in the root of the project.
+The output is a `bundle.js` file in the project's root.
 
 
 ### Obtaining Credentials
 
-To use BEE Plugin, you will need to obtain appropriate credentials: Client ID and Client Secret, which are available in the application details page of the BEE Plugin developer portal.
+To use Beefree SDK, you must obtain the appropriate credentials: Client ID and Client Secret, available on the Beefree SDK Developer Console application details page.
 
 https://developers.beefree.io/apps
 
