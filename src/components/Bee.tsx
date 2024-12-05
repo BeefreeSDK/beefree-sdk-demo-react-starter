@@ -8,7 +8,7 @@ import {
 } from '../../types'
 import { config } from '../../config/config.local'
 // @ts-ignore
-import BeePlugin from '@mailupinc/bee-plugin'
+import BeePlugin from '@beefree.io/sdk'
 
 const DEFAULT_CONFIGURATION = {
   uid: config.CLIENT_UID,            // Needed for identify resources of the user.
