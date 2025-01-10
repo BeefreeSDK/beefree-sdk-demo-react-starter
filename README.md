@@ -1,17 +1,18 @@
-![BEE Plugin](https://avatars.githubusercontent.com/u/15609939?v=4)
+![BEE Plugin](https://avatars.githubusercontent.com/u/15609939?s=150&v=4)
 
-**Live Demo**: https://beefree.io/templates/
+**Live Demo**: https://beefree.io/start-designing
 
 # React Sample Code
 
-![](https://beefree.io/wp-content/themes/bee2017/img/beeplugin/hero.png)
-
 ### Table of Contents
 
-- [Prerequisites](#prerequisites)
-- [Getting Started](#getting-started)
-- [Obtaining Credentials](#obtaining-credentials)
-- [Resources](#resources)
+- [React Sample Code](#react-sample-code)
+    - [Table of Contents](#table-of-contents)
+    - [Prerequisites](#prerequisites)
+    - [Getting Started](#getting-started)
+    - [Build](#build)
+    - [Obtaining Credentials](#obtaining-credentials)
+    - [Resources](#resources)
 
 ### Prerequisites
 
@@ -24,34 +25,38 @@ The easiest way to get started is to clone this repository:
 
 ```bash
 # Get the latest snapshot 
-git clone https://github.com/BeefreeSDK/beeplugin-react-starter.git myproject
+git clone https://github.com/BeefreeSDK/beefree-sdk-demo-react-starter.git myproject
 
 # Change directory
 cd myproject
+```
 
-# Open config.local.ts and change  
-# the placeholders with your credentials
+Open `config/config.local.ts` and change the placeholders with your credentials:
+```javascript
 CLIENT_ID:       '### my-client-id ###'
 CLIENT_SECRET:   '### my-secret-key ###'
 CLIENT_UID:      '### username ###'
-# NOTE: remember to store these credentials in your
-# back-end and not expose them publicly in your front-end
+```
+> NOTE: remember to store these credentials in your
+> back-end and not expose them publicly in your front-end
 
-# Install dependencies, then start the project
-# with the minimal scripts provided:
+Install dependencies, then start the project
+ with the minimal scripts provided:
+
+```bash
 > npm install
 > npm start
 
 # or using yarn:
 > yarn
 > yarn start
-
-# Then run it in your browser
-http://localhost:8080/
 ```
+Then run it in your browser:  
+http://localhost:8080/
+
 
 ### Build
-There is a simple build script that uses Webpack default configuration for the bundle
+There is a simple build script that uses **Webpack** default configuration for the bundle
 ```bash
 # Build the project in a single artifact:
 > npm run build
@@ -73,4 +78,3 @@ https://developers.beefree.io/apps
 * [Technical Docs](https://docs.beefree.io/) 
 * [Developer Portal](https://developers.beefree.io/login) 
 * [FAQs](https://docs.beefree.io/faq/)
-
