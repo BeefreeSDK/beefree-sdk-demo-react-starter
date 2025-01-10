@@ -1,15 +1,15 @@
 {
-  "name": "beeplugin-react-starter",
-  "version": "1.0.2",
-  "description": "BEE Plugin starter package for Redux with React and Typescript support",
+  "name": "beefree-sdk-demo-react-starter",
+  "version": "1.0.3",
+  "description": "Beefree SDK starter app for React with Redux and Typescript support",
   "main": "index.js",
-  "repository": "https://github.com/BEE-Plugin/beeplugin-react-starter.git",
+  "repository": "https://github.com/BeefreeSDK/beefree-sdk-demo-react-starter.git",
   "scripts": {
     "watch": "webpack --watch",
     "start": "webpack serve --open",
     "build": "webpack build"
   },
-  "author": "",
+  "author": "Beefree",
   "license": "ISC",
   "devDependencies": {
     "@types/react-dom": "^17.0.9",
@@ -22,7 +22,7 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
-    "@beefree.io/sdk": "^7.1.0-feat-exec-command.1",
+    "@beefree.io/sdk": "^7.1.1",
     "fs": "0.0.1-security",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
