@@ -8,10 +8,9 @@ import {
 } from '../../types'
 import { config } from '../../config/config.local'
 // @ts-ignore
-import BeePlugin from '@beefree.io/sdk'
+import BeefreeSDK from '@beefree.io/sdk'
 
 const DEFAULT_CONFIGURATION = {
-  uid: config.CLIENT_UID,            // Needed for identify resources of the user.
   container: 'bee-plugin-container', // Identifies the id of div element that contains BEE Plugin.
   language: 'en-US',
   autosave: true,
@@ -40,20 +39,38 @@ class Bee extends Component<Props, State> {
 
   componentWillMount() {
     const { baseTemplate, onSave, onSend, onStart, onSaveAsTemplate, beeConfig } = this.props
-    const beeFinalConfig = {...DEFAULT_CONFIGURATION, ...beeConfig, onSave, onSaveAsTemplate, onSend, onStart}
+    const beeFinalConfig = { ...DEFAULT_CONFIGURATION, ...beeConfig, onSave, onSaveAsTemplate, onSend, onStart }
     return this.onFetchTemplate(baseTemplate || config.BASE_TEMPLATE)
       .then((template) => {
-        const beeEditor: BeeEditor = new BeePlugin()
-        this.onFetchBeeToken(config.CLIENT_ID, config.CLIENT_SECRET, beeEditor)
-          .then(() => beeEditor.start(beeFinalConfig, template))
+        this.onFetchBeeToken(config.CLIENT_UID, config.CLIENT_ID, config.CLIENT_SECRET)
+          .then((token:any) => {
+            const beeEditor: BeeEditor = new BeefreeSDK(token);
+            beeEditor.start(beeFinalConfig, template)
+          })
       })
       .catch((error) => {
         console.error(error)
-    })
+      })
   }
 
-  onFetchBeeToken(clientId: string, clientSecret: string, beeEditor: BeeEditor) {
-    return beeEditor.getToken(clientId, clientSecret)
+  async onFetchBeeToken(uid: string, clientId: string, clientSecret: string) {
+    const myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    const raw = JSON.stringify({
+      client_id: clientId,
+      client_secret: clientSecret,
+      uid: uid,
+    });
+
+    return await fetch("https://auth.getbee.io/loginV2", {
+      method: "POST",
+      headers: myHeaders,
+      body: raw,
+      redirect: "follow",
+    }) 
+      .then((response) => response.json())
+      .catch((error) => console.error(error));
   }
 
   onFetchTemplate(template: JsonTemplate) {
@@ -63,7 +80,7 @@ class Bee extends Component<Props, State> {
 
   render() {
     const { style, className } = this.props
-    return(
+    return (
       <div id="bee-plugin-container" style={style} className={className} />
     )
   }
