@@ -1,7 +1,7 @@
 > [!WARNING]
 > **⛔ This repository has been deprecated**
 >
-> Beefree SDK now has a new React Wrapper, and this project is no longer updated/maintained. All development has moved to the new repository:
+> Beefree SDK now has a new React Wrapper, and this project is no longer updated/maintained. The sample project has moved to the new repository:
 >
 > **👉 [BeefreeSDK/react-email-builder](https://github.com/BeefreeSDK/react-email-builder/tree/main/example)**
 >
